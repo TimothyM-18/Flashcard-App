@@ -9,14 +9,18 @@ interface FlashcardFormProps {
 export default function FlashcardForm({ onAdd }: FlashcardFormProps) {
     const [question, setQuestion] = useState("");
     const [answer, setAnswer] = useState("");
+    const [category, setCategory] = useState("");
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        if (!question || !answer || !category) return;
 
         const newCard: Flashcard = {
             id: crypto.randomUUID(),
             question,
             answer,
+            category,
             categoryId: "default",
             interval: 1,
             easeFactor: 2.5,
@@ -26,10 +30,18 @@ export default function FlashcardForm({ onAdd }: FlashcardFormProps) {
         onAdd(newCard);
         setQuestion("");
         setAnswer("");
+        setCategory("");
     };
 
     return (
         <form onSubmit={handleSubmit} className="flashcard-form">
+            <input 
+                type="text"
+                placeholder="Category (e.g Algorithms, React)"
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+            />
+
             <input 
                 type="text"
                 placeholder="Question"

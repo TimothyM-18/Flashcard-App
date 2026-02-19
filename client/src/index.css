@@ -277,3 +277,36 @@ h1 {
   border-bottom: 2px solid #2563eb;
   padding-bottom: 4px;
 }
+
+.category-badge {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+
+  color: #2563eb;
+  background-color: #e0e7ff;
+  border-radius: 999px;
+}
+
+.category-filter {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.category-filter button {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: white;
+  cursor: pointer;
+}
+
+.category-filter button.active {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}

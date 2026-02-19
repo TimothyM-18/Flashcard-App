@@ -8,6 +8,7 @@ interface FlashcardItemProps {
 export default function FlashCard({ card, onDelete }: FlashcardItemProps) {
     return (
         <div className="flashcard-item">
+            <span className="category-badge">{card.category}</span>
             <h3>{card.question}</h3>
             <p>{card.answer}</p>
 
