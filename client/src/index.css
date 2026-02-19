@@ -24,11 +24,12 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  background-color: #f4f6f9;
+  color: #1f2937;
   min-width: 320px;
   min-height: 100vh;
 }
+
 
 h1 {
   font-size: 3.2em;
@@ -65,4 +66,214 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+* {
+  box-sizing: border-box;
+
+  /* Clean, modern font stack */
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+.app {
+  /* Prevent content from stretching too wide on large screens */
+  max-width: 900px;
+
+  /* Center the app horizontally */
+  margin: 40px auto;
+
+  /* Space around content */
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
+.flashcard-form {
+  background: white;
+
+  /* Inner spacing */
+  padding: 24px;
+
+  /* Rounded corners */
+  border-radius: 10px;
+
+  /* Soft shadow to lift card off background */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+
+  /* Space below the form */
+  margin-bottom: 30px;
+
+}
+
+.flashcard-form input {
+  width: 100%;
+
+  padding: 12px;
+
+  margin-bottom: 16px;
+
+  border-radius: 6px;
+
+  border: 1px solid #d1d5db;
+
+  /* Readable font size */
+  font-size: 16px;
+}
+
+.flashcard-form button {
+  width: 100%;
+
+  padding: 12px;
+
+  background-color: #2563eb;
+
+  color: white;
+
+  border-radius: 6px;
+
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+.flashcard-form button:hover {
+
+  background-color: #0f2f87;
+}
+
+.flashcard-list {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
+  gap: 20px;
+}
+
+.flashcard-item {
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 8px 16px rgba(0,0,0,0.06);
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+}
+
+.flashcard-item:hover {
+  /* Move card upward */
+  transform: translateY(-4px);
+
+  /* Increase shadow for depth */
+  box-shadow: 0 12px 24px rgba(82, 75, 75, 0.911);
+}
+
+/* Question text */
+.flashcard-item h3 {
+  /* Remove top margin */
+  margin-top: 0;
+
+  /* Slightly larger text for emphasis */
+  font-size: 18px;
+}
+
+/* Answer text */
+.flashcard-item p {
+  /* Softer text color */
+  color: #4b5563;
+
+  /* Space below answer */
+  margin-bottom: 20px;
+}
+
+.flashcard-item button {
+  /* Red indicates destructive action */
+  background-color: #ef4444;
+
+  /* White text */
+  color: white;
+
+  /* Remove default border */
+  border: none;
+
+  /* Comfortable click area */
+  padding: 8px 12px;
+
+  /* Rounded edges */
+  border-radius: 6px;
+
+  /* Pointer cursor */
+  cursor: pointer;
+}
+
+/* Hover state for delete button */
+.flashcard-item button:hover {
+  /* Darker red on hover */
+  background-color: #e34d4d;
+}
+
+.study-card {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.4s;
+}
+
+.study-card:hover {
+  transform: scale(1.02);
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.navbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* App logo */
+.logo {
+  margin: 0;
+  font-size: 20px;
+}
+
+/* Nav links container */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+/* Default link styles */
+.nav-links a {
+  text-decoration: none;
+  color: #374151;
+  font-weight: 500;
+}
+
+/* Active route styling */
+.nav-links a.active {
+  color: #2563eb;
+  border-bottom: 2px solid #2563eb;
+  padding-bottom: 4px;
 }
